@@ -9,12 +9,12 @@ function getComputerChoice() {
   let computerChoice;
 
   // GENERATE a random number and use it to set a value of one, two or three
-  let rand = Math.floor(Math.random() * 3) + 1;
+  let rand = Math.random;
 
   // SET value of computerChoice
-  if (rand == 1) {
+  if (rand <= 0.333) {
     computerChoice = "ROCK";
-  } else if (rand == 2) {
+  } else if (rand > 0.333 && rand < 0.666) {
     computerChoice = "PAPER";
   } else {
     computerChoice = "SCISSORS";
@@ -76,6 +76,9 @@ function playGame() {
           console.log("Rock beats Scissors. You WON!");
           humanScore++;
         }
+
+        // IF human is paper, paper loses to scissors, beats rock
+        // INCREMENT appropriate score
       } else if (humanChoice == "PAPER") {
         if (computerChoice == "SCISSORS") {
           console.log("Scissors beats Paper. You lost.");
@@ -102,4 +105,4 @@ function playGame() {
   }
 }
 
-console.log(playGame());
+playGame();
