@@ -5,17 +5,13 @@
 // INITIALIZE a function called getComputerChoice
 // which will be the computer's side of the game
 function getComputerChoice() {
-  // CREATE computerChoice to store the value of
-  // rock, paper or scissors
+  // CREATE computerChoice to store the value of rock, paper or scissors
   let computerChoice;
 
-  // GENERATE a random number and use it to set a
-  // value of one, two or three
+  // GENERATE a random number and use it to set a value of one, two or three
   let rand = Math.floor(Math.random() * 3) + 1;
 
-  // IF value = 1, SET computerChoice to rock
-  // ELSE IF value = 2, SET computerChoice to paper
-  // ELSE SET computerChoice to scissors
+  // SET value of computerChoice
   if (rand == 1) {
     computerChoice = "ROCK";
   } else if (rand == 2) {
@@ -29,16 +25,13 @@ function getComputerChoice() {
 
 // CREATE a new function named getHumanChoice.
 function getHumanChoice() {
-  // PROMPT user to enter rock, paper or scissors
-  // and save to variable humanChoice
+  // PROMPT user to enter rock, paper or scissors and save to variable humanChoice
   let humanChoice = prompt(
     `Welcome to Rock Paper Scissors!
     Please enter your choice.`
   );
 
   // TEST that the humanChoice is valid
-  // IF humanChoice is invalid, ask for them to
-  // re-enter their choice
   humanChoice = humanChoice.toUpperCase();
   if (
     !(
@@ -47,6 +40,7 @@ function getHumanChoice() {
       humanChoice == "SCISSORS"
     )
   ) {
+    // IF humanChoice is invalid, try again
     alert("Please make a valid choice. Thanks!");
     getHumanChoice();
   }
@@ -108,4 +102,4 @@ function playGame() {
   }
 }
 
-playGame();
+console.log(playGame());
